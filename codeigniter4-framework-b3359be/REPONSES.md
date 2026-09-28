@@ -35,3 +35,15 @@ oui `respondCreated()` renvoie un code 201, il envoie une en-tête Location: /ap
 ## Q9
 J'ai choisi 204 (No Content) car la ressource a été supprimée avec succès et il n'y a pas de contenu à renvoyer dans la réponse.
 
+## Tableau de conception — ressource `emprunts`
+
+| Requête | Corps envoyé | Réponse attendue |
+|---|---|---|
+| GET /livres | — | 200 OK, liste JSON des livres |
+| GET /livres/1 | — | 200 OK, livre JSON |
+| DELETE /livres/2 | — | 204 No Content |
+| DELETE /auteurs/1/livres?pages=200 | — | 204 No Content |
+| POST /livres/3 | Content-Type: application/json<br>{auteur:"(auteur)", titre:"(titre)"} | 201 Created, Location vers la nouvelle ressource |
+| PATCH /emprunts/4 | Content-Type: application/json<br>{dateRetour:"01/10/2010"} | 200 OK, emprunt modifié |
+| GET /adherants/3/emprunts | — | 200 OK, liste JSON des emprunts |
+| PUT /livre/4 | Content-Type: application/json<br>{auteur:"(auteur)", titre:"(titre)"} | 200 OK, livre mis à jour |

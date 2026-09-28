@@ -64,8 +64,9 @@ form.addEventListener('submit', async (e) => {
   }
 
   if(response.status == 201){
-    console.log(`userId : ${userId}`);
-    console.log(`${title} ${body}`);
+    console.log(`userId : ${userId} ${title} ${body}`);
+    // console.log(`${title} ${body}`);
+    charger();
   }
 });
 
